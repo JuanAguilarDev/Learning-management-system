@@ -1,0 +1,11 @@
+.carousel{
+    height: 600px;
+}
+
+.carousel__card--description{
+    max-width: 350px;
+}
+
+.carousel__img{
+    z-index: -1;
+}
