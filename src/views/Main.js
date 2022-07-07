@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar/Navbar'
 export default function Main() {
   return (
     <>  
-        <Navbar></Navbar>
+        <Navbar active={true}></Navbar>
         <HeroCarousel></HeroCarousel>
         <CoursesGrid></CoursesGrid>
         <HeroClean direction={'row'}></HeroClean>

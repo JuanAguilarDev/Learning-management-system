@@ -1,10 +1,12 @@
 import './App.css';
+import Login from './views/Login';
 import Main from './views/Main';
+import Register from './views/Register';
 
 function App() {
   return (
     <>
-      <Main></Main>
+      <Register></Register>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({active}) {
   return (
     <nav className="navbar navbar-dark navbar-expand-md bg-dark py-3">
         <div className="container"><a className="navbar-brand d-flex align-items-center" href="#"><span className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg className="bi bi-bezier" width="1em" height="1em" viewBox="0 0 16 16">
@@ -9,9 +9,9 @@ export default function Navbar() {
                     </svg></span><span>Undemy</span></a><button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-5"><span className="visually-hidden">Toggle navigation</span><span className="navbar-toggler-icon"></span></button>
             <div id="navcol-5" className="collapse navbar-collapse">
                 <ul className="navbar-nav ms-auto">
-                    <li className="nav-item"><a className="nav-link active" href="#">First Item</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Second Item</a></li>
-                    <li className="nav-item"><a className="nav-link" href="#">Third Item</a></li>
+                    <li className="nav-item"><a className={`nav-link ${active ? 'active' : ''}`} href="#">First Item</a></li>
+                    <li className="nav-item"><a className={`nav-link ${active ? 'active' : ''}`} href="#">Second Item</a></li>
+                    <li className="nav-item"><a className={`nav-link ${active ? 'active' : ''}`} href="#">Third Item</a></li>
                 </ul><a className="btn btn-primary ms-md-2" role="button" href="#">Button</a>
             </div>
         </div>
