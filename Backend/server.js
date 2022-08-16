@@ -50,6 +50,7 @@ app.listen(PORT, () => {
 });
 
 function initial() {
+  // Check if the db doesn't have documents 
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
@@ -63,23 +64,13 @@ function initial() {
       });
 
       new Role({
-        name: "moderator"
+        name: "tutor"
       }).save(err => {
         if (err) {
           console.log("error", err);
         }
 
-        console.log("added 'moderator' to roles collection");
-      });
-
-      new Role({
-        name: "admin"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'admin' to roles collection");
+        console.log("added 'tutor' to roles collection");
       });
     }
   });

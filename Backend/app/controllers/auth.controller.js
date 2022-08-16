@@ -20,6 +20,7 @@ exports.signup = (req, res) => {
     }
 
     if (req.body.roles) {
+      console.log(req.body.roles);
       Role.find(
         {
           name: { $in: req.body.roles }
@@ -36,7 +37,7 @@ exports.signup = (req, res) => {
               res.status(500).send({ message: err });
               return;
             }
-
+            console.log(user);
             res.send({ message: "User was registered successfully!" });
           });
         }
@@ -54,7 +55,7 @@ exports.signup = (req, res) => {
             res.status(500).send({ message: err });
             return;
           }
-
+          console.log(user)
           res.send({ message: "User was registered successfully!" });
         });
       });
