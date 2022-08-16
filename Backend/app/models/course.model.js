@@ -6,7 +6,7 @@ const Course = mongoose.model(
     title: String,
     description: String,
     repository: String,
-    url: String,
+    video: String,
     user: [
       {
         type: mongoose.Schema.Types.ObjectId,
