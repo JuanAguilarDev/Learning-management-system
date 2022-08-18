@@ -55,12 +55,12 @@ exports.loadVideoV = (req, res) => {
     }
   
     // get video stats (about 61MB)
-    const videoPath = dir.join(__dirname, "../upload/courses/JuanDev/video.mp4");
+    const videoPath = dir.join(__dirname, "../upload/courses/JuanDev/test.mp4");
     const videoSize = fs.statSync(videoPath).size;
   
     // Parse Range
     // Example: "bytes=32324-"
-    const CHUNK_SIZE = 10 ** 6; // 1MB
+    const CHUNK_SIZE = 1 * 1e+6; // 1MB
     const start = Number(range.replace(/\D/g, ""));
     const end = Math.min(start + CHUNK_SIZE, videoSize - 1);
   

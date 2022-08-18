@@ -4,8 +4,25 @@ const coursesPath = dir.join(__dirname, "../upload/videos");
 const User = require('../models').user;
 
 const publicCourses = () => {
-  let publicCourses = fs.readdirSync(coursesPath, 'utf8');
-  return publicCourses; 
+  let exist = fs.existsSync(coursesPath);
+  if(exist){
+    let publicCourses = fs.readdirSync(coursesPath, 'utf8');
+    return publicCourses; 
+  }
+
+  return {msg: "No hay cursos disponibles aun. "}
+  
+}
+
+exports.deleteUser = (req, res) => {
+  User.deleteOne({_id: req.params.id}).exec((err, result) => {
+    if(err){
+        res.status(500).send({ message: err });
+        return;
+    }
+
+    res.send({msg: "User deleted"});
+});
 }
 
 exports.updateUser = (req, res) => {
