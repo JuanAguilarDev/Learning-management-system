@@ -15,6 +15,19 @@ const publicCourses = () => {
 }
 
 exports.deleteUser = (req, res) => {
+
+  User.findOne({ _id: req.params.id }).exec((err, result) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    console.log(result);
+
+    fs.rmSync(dir.join(__dirname, `../upload/courses/${result.username}`));
+
+
+  });
+
   User.deleteOne({_id: req.params.id}).exec((err, result) => {
     if(err){
         res.status(500).send({ message: err });

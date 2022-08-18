@@ -21,7 +21,7 @@ verifyToken = (req, res, next) => {
 
 
 isTutor= (req, res, next) => {
-  console.log(req.userId)
+  console.log(req.userId, 'id')
   User.findById(req.userId).exec((err, user) => {
     if (err) {
       res.status(500).send({ message: err });
