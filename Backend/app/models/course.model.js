@@ -7,12 +7,7 @@ const Course = mongoose.model(
     description: String,
     repository: String,
     video: String,
-    user: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-      }
-    ]
+    author: String
   })
 );
 

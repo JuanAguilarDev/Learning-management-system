@@ -38,9 +38,8 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome." });
+  res.send({msg: 'Welcome'})
 });
-
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
